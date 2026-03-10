@@ -2,7 +2,7 @@
 local poi_tick = 0
 local poi_tick_max = 30
 
-local poi_pos = {x = 0, y = 20500, z = 0}
+local poi_pos = {x = 0, y = 21000, z = 0}
 
 local function spawn_particle(pos)
 
@@ -91,7 +91,7 @@ local function spawn_particle(pos)
 end
 
 function mese_rift.tick_poi()
-    local h = 7
+    local h = 8
 
     for y = poi_pos.y - (h+1), poi_pos.y + (h+1) do
         if math.random(100) <= 60 then
