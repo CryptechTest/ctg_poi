@@ -1,11 +1,11 @@
 
 geodes_lib:register_geode({
-    id = 'mese_1',
+    id = 'mese_stone',
     wherein = "default:stone",
     y_min = -11000,
     y_max = -7000,
     scarcity = 77,
-    generation_chance = 50,
+    generation_chance = 25,
     inner = "mese_rift:mese_crystal",
     inners = {{ name = "amethyst_new:calcite", fill = 30 }, { name = "ctg_quartz:quartz", fill = 47 }, { name = "mese_rift:mese_crystal", fill = 13 },},
     inner_alt = {"mese_rift:mese_crystal_budding", "ctg_quartz:quartz_budding"},
@@ -15,6 +15,26 @@ geodes_lib:register_geode({
     radius_min = 3,
     radius_max = 8,
 })
+
+if core.get_modpath("deepslate") then
+    geodes_lib:register_geode({
+        id = 'mese_deepslate',
+        wherein = "deepslate:deepslate",
+        y_min = -11000,
+        y_max = -7000,
+        scarcity = 77,
+        generation_chance = 50,
+        inner = "mese_rift:mese_crystal",
+        inners = {{ name = "amethyst_new:calcite", fill = 30 }, { name = "ctg_quartz:quartz", fill = 47 }, { name = "mese_rift:mese_crystal", fill = 13 },},
+        inner_alt = {"mese_rift:mese_crystal_budding", "ctg_quartz:quartz_budding"},
+        inner_alt_chance = 50,
+        shell = {"amethyst_new:basalt", "amethyst_new:basalt", "amethyst_new:calcite", "amethyst_new:calcite", "ctg_quartz:quartz"},
+        cavity = { lower_fill = "default:lava_source", upper_fill = "air", threshold = 20, span = 20 },
+        radius_min = 3,
+        radius_max = 8,
+    })
+end
+
 geodes_lib:register_geode({
     id = 'mese_1_corestone',
     wherein = "ctg_world:corestone",
