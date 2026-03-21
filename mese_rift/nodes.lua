@@ -14,7 +14,21 @@ core.register_node("mese_rift:mese_crystal_budding", {
     light_source = 3,
     paramtype = "light",
     groups = {cracky = 3, level = 1, radioactive = 1, not_in_creative_inventory = 1},
-    drop = "mese_rift:mese_crystal",
+    drop = {
+        max_items = 1,
+        items = {
+            {
+                -- player will get budding with 1/70 chance
+                items = {'mese_rift:mese_crystal_budding'},
+                rarity = 30,
+            },
+            {
+                -- player will get regular node only if he get no budding,
+                -- this is because max_items is 1
+                items = {'mese_rift:mese_crystal'},
+            }
+        }
+    },
     sounds = default.node_sound_glass_defaults(),
 })
 
@@ -33,16 +47,10 @@ core.register_node("mese_rift:mese_cluster_small", {
     },
     groups = {cracky = 3, not_in_creative_inventory = 1},
     drop = {
-        max_items = 2,
+        max_items = 1,
         items = {
-            {
-                items = {"default:mese_crystal"},
-                rarity = 3,
-            },
-            {
-                items = {"default:mese_crystal"},
-                rarity = 5,
-            }
+            items = {"default:mese_crystal"},
+            rarity = 3,
         }
     },
     sounds = default.node_sound_glass_defaults(),
@@ -67,11 +75,10 @@ core.register_node("mese_rift:mese_cluster_medium", {
         items = {
             {
                 items = {"default:mese_crystal"},
-                rarity = 2
+                rarity = 5
             },
             {
                 items = {"default:mese_crystal"},
-                rarity = 3
             }
         }
     },
@@ -97,7 +104,7 @@ core.register_node("mese_rift:mese_cluster_large", {
         items = {
             {
                 items = {"default:mese_crystal"},
-                rarity = 1
+                rarity = 3
             },
             {
                 items = {"default:mese_crystal"},
@@ -105,7 +112,6 @@ core.register_node("mese_rift:mese_cluster_large", {
             },
             {
                 items = {"default:mese_crystal"},
-                rarity = 3
             }
         }
     },
